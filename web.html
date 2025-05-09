@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ian Busby</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .tabs {
+      display: flex;
+      background: #444;
+      overflow-x: auto;
+    }
+
+    .tab {
+      padding: 1rem;
+      cursor: pointer;
+      color: white;
+      flex: 1;
+      text-align: center;
+      border-right: 1px solid #555;
+    }
+
+    .tab:hover, .tab.active {
+      background: #666;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2rem;
+      background: white;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ian Busby's Resume</h1>
+</header>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('about')">About</div>
+  <div class="tab" onclick="showTab('experience')">Experience</div>
+  <div class="tab" onclick="showTab('education')">Education</div>
+  <div class="tab" onclick="showTab('research')">Research</div>
+</div>
+
+<div id="about" class="tab-content active">
+  <h2>About Me</h2>
+  <p>WIP.</p>
+</div>
+
+<div id="experience" class="tab-content">
+  <h2>Work Experience</h2>
+  <p>WIP.</p>
+</div>
+
+<div id="education" class="tab-content">
+  <h2>Education</h2>
+  <p>WIP.</p>
+</div>
+
+<div id="research" class="tab-content">
+  <h2>Research</h2>
+  <p>Research.</p>
+</div>
+
+<script>
+  function showTab(id) {
+    const contents = document.querySelectorAll('.tab-content');
+    const tabs = document.querySelectorAll('.tab');
+    contents.forEach(content => content.classList.remove('active'));
+    tabs.forEach(tab => tab.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
